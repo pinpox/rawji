@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Test outputs
+*.jpg
+!example.jpg
+*.bin
+
+# Development/Research files (keep in git history but ignore new ones)
+captures/
+extracted-*/
+ghidra-projects/
+test/
+*.log
+
+# Temporary
+.DS_Store
+*.swp
+*.swo

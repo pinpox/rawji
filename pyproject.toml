@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rawji"
+version = "0.1.0"
+description = "Rawji - Fujifilm RAW Conversion Tool - Convert RAF files using in-camera processing via USB"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "GPL-3.0-or-later"}
+authors = [
+    {name = "pinpox"}
+]
+keywords = ["fujifilm", "raw", "raf", "photography", "conversion", "film-simulation", "rawji"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics",
+]
+
+dependencies = [
+    "pyusb>=1.0.0",
+]
+
+[project.scripts]
+rawji = "rawji.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/pinpox/rawji"
+Repository = "https://github.com/pinpox/rawji"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
