@@ -1,14 +1,14 @@
 # Rawji
 
+Alternative to **Fujifim X-Raw Studio** for Linux users.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c16513c0-7061-46bb-bfc2-a1fbb453349e" alt="Film Simulation Comparison" width="800">
+</div>
+
 Convert Fujifilm RAF files to JPEG using your camera's built-in processor via
 USB. Apply complete Fujifilm recipes with full control over film simulations,
 exposure, tone curve, and more!
-
-<div align="center">
-  <img src="https://example.com/collage-labeled.jpg" alt="Film Simulation Comparison" width="800">
-</div>
-
-Rawji provides an alternative to **Fujifim X-Raw Studio** for Linux users.
 
 - **All Film Simulations** - Provia, Velvia, Acros, Classic Chrome, Eterna, and more
 - **Complete Tone Control** - Sharpness, Highlights, Shadows, Color/Saturation
@@ -110,6 +110,10 @@ rawji input.RAF output.jpg \
 ```
 
 The entire process takes ~2-5 seconds per image.
+
+## Cameras tested
+
+- Fujifilm X-T30
 
 ## Credits & Acknowledgments
 
