@@ -18,7 +18,7 @@ from pathlib import Path
 
 from .fuji_usb import FujiCamera
 from .fuji_profile import create_profile_from_camera, validate_params
-from .fuji_enums import FilmSimulation, WhiteBalance, DynamicRange
+from .fuji_enums import FilmSimulation, WhiteBalance, DynamicRange, GrainEffect, ChromeEffect
 
 
 def main():
@@ -151,7 +151,19 @@ Requirements:
         help='Dynamic range (100, 200, or 400)'
     )
 
-    # Removed grain/chrome/quality/size options for now - focus on core parameters
+    # Film effects
+    parser.add_argument(
+        '--grain',
+        type=str,
+        choices=GrainEffect.names(),
+        help='Film grain effect (off, weak, strong)'
+    )
+    parser.add_argument(
+        '--color-chrome',
+        type=str,
+        choices=ChromeEffect.names(),
+        help='Color chrome effect (off, weak, strong)'
+    )
 
     # Debug options
     parser.add_argument(
@@ -241,6 +253,17 @@ Requirements:
             dr = DynamicRange.from_percent(args.dynamic_range)
             changes['DynamicRange'] = int(dr)
             print(f"Dynamic Range: DR{args.dynamic_range}")
+
+        # Film effects
+        if args.grain:
+            grain = GrainEffect.from_name(args.grain)
+            changes['GrainEffect'] = int(grain)
+            print(f"Grain Effect: {args.grain}")
+
+        if args.color_chrome:
+            chrome = ChromeEffect.from_name(args.color_chrome)
+            changes['ChromeEffect'] = int(chrome)
+            print(f"Color Chrome Effect: {args.color_chrome}")
 
         print("=" * 70)
 

@@ -202,6 +202,11 @@ class GrainEffect(IntEnum):
         """Return list of grain effect names for argparse choices"""
         return [name.lower() for name in cls.__members__.keys()]
 
+    @classmethod
+    def from_name(cls, name: str):
+        """Convert CLI name to enum value"""
+        return cls[name.capitalize()]
+
 
 class GrainEffectSize(IntEnum):
     """Film grain size"""
@@ -219,6 +224,11 @@ class ChromeEffect(IntEnum):
     def names(cls):
         """Return list of chrome effect names for argparse choices"""
         return [name.lower() for name in cls.__members__.keys()]
+
+    @classmethod
+    def from_name(cls, name: str):
+        """Convert CLI name to enum value"""
+        return cls[name.capitalize()]
 
 
 class ColorChromeBlue(IntEnum):

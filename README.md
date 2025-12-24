@@ -74,6 +74,8 @@ rawji photo.RAF converted.jpg \
 | `--sharpness`     | -4 to +4            | Sharpness (-4=soft, +4=hard)  |
 | `--color`         | -4 to +4            | Color saturation/intensity    |
 | `--nr`            | -4 to +4            | Noise reduction               |
+| `--grain`         | off/weak/strong     | Film grain effect             |
+| `--color-chrome`  | off/weak/strong     | Color chrome effect           |
 | `--dynamic-range` | 100/200/400         | Dynamic range setting         |
 | `--white-balance` | auto/daylight/shade | White balance preset          |
 
@@ -107,6 +109,16 @@ rawji input.RAF output.jpg \
     --shadows=-1 \
     --color=-2 \
     --sharpness=-1
+```
+
+### Vintage Film Look with Grain
+```bash
+rawji input.RAF output.jpg \
+    --film-sim=classic-chrome \
+    --grain=strong \
+    --color-chrome=weak \
+    --highlights=+2 \
+    --shadows=-1
 ```
 
 The entire process takes ~2-5 seconds per image.
