@@ -39,17 +39,21 @@ taken:
 rawji input.RAF output.jpg
 ```
 
-Apply a complete Fujifilm Recipe:
+Apply a complete Fujifilm Recipe (Reggie's Portra):
 
 ```bash
 rawji photo.RAF converted.jpg \
-    --film-sim=classic-chrome \
-    --exposure=+0.7 \
-    --highlights=+2 \
-    --shadows=-2 \
-    --sharpness=+3 \
-    --color=-1 \
-    --dynamic-range=200
+    --film-sim=classicchrome \
+    --highlights=-1 \
+    --shadows=-1 \
+    --color=+2 \
+    --sharpness=-2 \
+    --nr=-4 \
+    --grain=weak \
+    --color-chrome=strong \
+    --wb-shift-r=+2 \
+    --wb-shift-b=-4 \
+    --exposure=+0.7
 ```
 
 ### Film Simulation Options
