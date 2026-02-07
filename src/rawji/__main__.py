@@ -18,7 +18,7 @@ from pathlib import Path
 
 from .fuji_usb import FujiCamera
 from .fuji_profile import create_profile_from_camera, validate_params
-from .fuji_enums import FilmSimulation, WhiteBalance, DynamicRange, GrainEffect, ChromeEffect
+from .fuji_enums import FilmSimulation, WhiteBalance, DynamicRange, GrainEffect, GrainEffectSize, ChromeEffect, ColorChromeBlue
 
 
 def main():
@@ -159,9 +159,21 @@ Requirements:
         help='Film grain effect (off, weak, strong)'
     )
     parser.add_argument(
+        '--grain-size',
+        type=str,
+        choices=GrainEffectSize.names(),
+        help='Film grain size effect (small, large)'
+    )    
+    parser.add_argument(
         '--color-chrome',
         type=str,
         choices=ChromeEffect.names(),
+        help='Color chrome effect (off, weak, strong)'
+    )
+    parser.add_argument(
+        '--color-chrome-blue',
+        type=str,
+        choices=ColorChromeBlue.names(),
         help='Color chrome effect (off, weak, strong)'
     )
 
@@ -260,10 +272,20 @@ Requirements:
             changes['GrainEffect'] = int(grain)
             print(f"Grain Effect: {args.grain}")
 
+        if args.grain:
+            grain_size = GrainEffectSize.from_name(args.grain_size)
+            changes['GrainEffectSize'] = int(grain_size)
+            print(f"Grain Size Effect: {args.grain_size}")
+
         if args.color_chrome:
             chrome = ChromeEffect.from_name(args.color_chrome)
             changes['ChromeEffect'] = int(chrome)
             print(f"Color Chrome Effect: {args.color_chrome}")
+
+        if args.color_chrome_blue:
+            chrome_blue = ColorChromeBlue.from_name(args.color_chrome_blue)
+            changes['ColorChromeBlue'] = int(chrome_blue)
+            print(f"Color Chrome Blue Effect: {args.color_chrome_blue}")
 
         print("=" * 70)
 
