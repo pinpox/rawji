@@ -188,7 +188,7 @@ def create_profile_from_camera(
         'ImageSize': 0x7,        # L 3:2
         'ImageQuality': 0x2,     # Fine
         'ExposureBias': 0,
-        'DynamicRange': 0x1,     # DR100
+        'DynamicRange': 100,     # DR100
         'WideDRange': 0,
         'FilmSimulation': 0x1,   # Provia (default)
         'GrainEffect': 0,

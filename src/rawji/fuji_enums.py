@@ -174,21 +174,17 @@ class ImageSize(IntEnum):
 
 class DynamicRange(IntEnum):
     """Dynamic range settings"""
-    DR100 = 0x1  # Standard (100%)
-    DR200 = 0x2  # +1 EV (200%)
-    DR400 = 0x3  # +2 EV (400%)
+    DR100 = 100  # Standard (100%)
+    DR200 = 200  # +1 EV (200%)
+    DR400 = 400  # +2 EV (400%)
 
     @classmethod
     def from_percent(cls, value: int):
         """Convert percentage (100, 200, 400) to enum"""
-        if value == 100:
-            return cls.DR100
-        elif value == 200:
-            return cls.DR200
-        elif value == 400:
-            return cls.DR400
-        else:
-            raise ValueError(f"Invalid dynamic range: {value} (must be 100, 200, or 400)")
+        try:
+            return cls(value)
+        except ValueError:
+            raise ValueError(f"Invalid dynamic range: {value} (must be 100, 200, or 400)") from None
 
 
 # ==============================================================================

@@ -13,7 +13,7 @@
 
         rawji = pkgs.python3Packages.buildPythonApplication {
           pname = "rawji";
-          version = "0.1.0";
+          version = "1.0.1";
           format = "pyproject";
 
           src = ./.;
