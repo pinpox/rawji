@@ -25,7 +25,7 @@ from .fuji_enums import (
 
 
 # Largest PTP container accepted on a bulk IN transfer, in bytes.
-MAX_CONTAINER_SIZE = 512 * 1024 * 1024
+MAX_CONTAINER_SIZE = 1024 * 1024 * 1024
 
 # Size of one bulk IN/OUT read or write, in bytes.
 USB_CHUNK_SIZE = 512 * 1024
