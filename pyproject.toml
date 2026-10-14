@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rawji"
-version = "0.1.0"
+version = "1.0.1"
 description = "Rawji - Fujifilm RAW Conversion Tool - Convert RAF files using in-camera processing via USB"
 readme = "README.md"
 requires-python = ">=3.7"
