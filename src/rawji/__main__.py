@@ -22,6 +22,7 @@ from .fuji_profile import create_profile_from_camera, validate_params
 from .fuji_enums import (
     FilmSimulation, WhiteBalance, DynamicRange,
     GrainEffect, GrainEffectSize, ChromeEffect, ColorChromeBlue,
+    LensModulationOpt, DRangePriority,
     FileType, CONTAINER_SUFFIX, detect_container, grain_effect_code,
 )
 
@@ -214,6 +215,19 @@ Requirements:
         choices=ChromeEffect.names(),
         help='Smooth skin effect (off, weak, strong)'
     )
+    parser.add_argument(
+        '--d-range-priority',
+        type=str,
+        choices=DRangePriority.names(),
+        help='D-Range Priority (off, weak, strong). Weak and strong '
+             'override highlights, shadows and dynamic range'
+    )
+    parser.add_argument(
+        '--lens-modulation',
+        type=str,
+        choices=LensModulationOpt.names(),
+        help='Lens Modulation Optimizer (on, off)'
+    )
 
     # Debug options
     parser.add_argument(
@@ -362,6 +376,16 @@ Requirements:
             skin = ChromeEffect.from_name(args.smooth_skin)
             changes['SmoothSkinEffect'] = int(skin)
             print(f"Smooth Skin Effect: {args.smooth_skin}")
+
+        if args.d_range_priority:
+            priority = DRangePriority.from_name(args.d_range_priority)
+            changes['WideDRange'] = int(priority)
+            print(f"D-Range Priority: {args.d_range_priority}")
+
+        if args.lens_modulation:
+            lens = LensModulationOpt.from_name(args.lens_modulation)
+            changes['LensModulationOpt'] = int(lens)
+            print(f"Lens Modulation Optimizer: {args.lens_modulation}")
 
         if file_type is not None:
             changes['FileType'] = int(file_type)
