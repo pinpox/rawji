@@ -315,6 +315,40 @@ class ColorChromeBlue(IntEnum):
         """Convert CLI name to enum value"""
         return cls[name.capitalize()]
 
+
+class LensModulationOpt(IntEnum):
+    """Lens Modulation Optimizer."""
+    On = 0x1
+    Off = 0x2
+
+    @classmethod
+    def names(cls):
+        """Return list of lens modulation names for argparse choices"""
+        return [name.lower() for name in cls.__members__.keys()]
+
+    @classmethod
+    def from_name(cls, name: str):
+        """Convert CLI name to enum value"""
+        return cls[name.capitalize()]
+
+
+class DRangePriority(IntEnum):
+    """D-Range Priority."""
+    Off = 0x0
+    Weak = 0x1
+    Strong = 0x2
+
+    @classmethod
+    def names(cls):
+        """Return list of D-Range Priority names for argparse choices"""
+        return [name.lower() for name in cls.__members__.keys()]
+
+    @classmethod
+    def from_name(cls, name: str):
+        """Convert CLI name to enum value"""
+        return cls[name.capitalize()]
+
+
 class ColorSpace(IntEnum):
     """Output colour space (sets the JPEG's EXIF ColorSpace tag)."""
     sRGB = 0x1

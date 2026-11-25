@@ -120,17 +120,19 @@ older bodies, but any value from 2500 to 10000 K on XProcessor5 bodies.
 | `--grain`         | off/weak/strong   | Film grain effect             |
 | `--grain-size`    | small/large       | Grain size                    |
 | `--color-chrome`  | off/weak/strong   | Color chrome effect           |
-| `--color-chrome-blue` | off/weak/strong | Color chrome FX blue          |
+| `--color-chrome-blue` | off/weak/strong | Color chrome FX blue        |
 | `--smooth-skin`   | off/weak/strong   | Smooth skin effect            |
 | `--dynamic-range` | 100/200/400       | Dynamic range setting         |
+| `--d-range-priority` | off/weak/strong | D-Range Priority             |
+| `--lens-modulation` | on/off           | Lens Modulation Optimizer    |
 | `--white-balance` | See above         | White balance mode            |
 | `--wb-shift-r`    | -9 to +9          | WB shift, red-cyan axis       |
 | `--wb-shift-b`    | -9 to +9          | WB shift, blue-yellow axis    |
 | `--wb-temp`       | 2500 to 10000 K   | Kelvin (needs `temperature`)  |
-| `--mono-wc`       | ±9 gen4 / ±18 XProc5 | Mono warm-cool (B&W sims)    |
-| `--mono-mg`       | ±18 XProc5   | Mono magenta-green (B&W sims) |
+| `--mono-wc`       | ±9 gen4 / ±18 XProc5 | Mono warm-cool (B&W sims)  |
+| `--mono-mg`       | ±18 XProc5   | Mono magenta-green (B&W sims)      |
 | `--thumbnail`     | flag              | Small fast preview (~40 KB)   |
-| `--file-type`     | jpeg/tiff-8bit/tiff-16bit/heif | Output format |
+| `--file-type`     | jpeg/tiff-8bit/tiff-16bit/heif | Output format    |
 
 ## Examples
 

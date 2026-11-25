@@ -108,7 +108,7 @@ PARAM_INDEX = {
     'ImageQuality': 3,
     'ExposureBias': 4,
     'DynamicRange': 5,
-    'WideDRange': 6,
+    'WideDRange': 6,          # D-Range Priority: 0=Off, 1=Weak, 2=Strong
     'FilmSimulation': 7,      # ← Film sim works!
     'GrainEffect': 8,
     'ColorChromeEffect': 9,
@@ -122,7 +122,7 @@ PARAM_INDEX = {
     'Color': 17,              # ← Works with *10 encoding!
     'Sharpness': 18,          # ← Works with *10 encoding!
     'NoiseReduction': 19,     # ← NOT *10 (see encode_noise_reduction)
-    'Reserved20': 20,
+    'LensModulationOpt': 20,  # 1=On, 2=Off
     'ColorSpace': 21,
     'BlackImageTone': 22,
     'SmoothSkinEffect': 23,
@@ -207,7 +207,7 @@ def create_profile_from_camera(
         'Color': 0,
         'Sharpness': 0,
         'NoiseReduction': 0,
-        'Reserved20': 0,
+        'LensModulationOpt': 0,
         'ColorSpace': 0,
         'BlackImageTone': 0,
         'SmoothSkinEffect': 0,
